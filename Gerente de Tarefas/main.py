@@ -1,12 +1,13 @@
-from dados import tarefas, fila_pedente, pilha_concluida, em_andamento, prioridades, status
+from dados import tarefas, fila_pendente, pilha_concluida, em_andamento, prioridade, status
 from utils import titulo
-from tarefas import cadastrar_tarefa
+from tarefas import cadastrar_tarefa, listar_tarefas, atualizar_status
 
 def mostrar_menu():
     titulo('Gerenciador de Tarefas')
     print('1. Adicionar Tarefa')
     print('2. Listar Tarefas')
-    print('3. Sair')
+    print('3, Atualizar Status')
+    print('4. Sair')
 
 while True:
     mostrar_menu()
@@ -15,8 +16,10 @@ while True:
     if opcao == '1':
         cadastrar_tarefa()
     elif opcao == '2':
-        print('opção 2 selecionada')
+        listar_tarefas()
     elif opcao == '3':
+        atualizar_status()
+    elif opcao == '4':
         print('Saindo do programa...')
         break
     else:
